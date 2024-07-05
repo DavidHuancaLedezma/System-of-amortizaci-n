@@ -1,0 +1,48 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_sac.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Amortización Constante</h1>
+    </header>
+    <main>
+        <form action="{% url 'resultados_sac'%}" method="post" class"resultados_sac">
+            {% csrf_token %}
+            <label for="">Deuda: <input type="text" name="input_deuda_sac" class="deuda" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required></label>
+            <label for="">Años: <input type="text" name="input_años_sac" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required></label>
+            <label for="" class="tasa">Tasa de interes: <input type="text" name="input_tasa_interes_sac" class="interes" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required> <label for="">%</label></label>
+            <select name="opcion_capitalizar_sac" id="" class="opcion_capitalizar_sac">
+                <option value="mensual">Anual con capitalización mensual</option>
+                <option value="ninguno">Ninguno</option>
+            </select>
+            <label for="">periodo:
+                <select name="opcion_periodo_sac" id="">
+                    <option value="anual">Anual</option>
+                    <option value="trimestral">Trimestral</option>
+                    <option value="bimestral">Bimestral</option>
+                    <option value="semestral">Semestral</option>
+                    <option value="mes">Mensual</option>
+                </select>
+            </label>
+
+            <div class="contenedor_botones">
+                <button type="submit">Ver solución</button>
+            </div>
+        </form>
+
+        <form action="{% url 'seleccion_problema' %}" method="post">
+            {% csrf_token %}
+            <div class="contenedor_botones">
+                <button type="submit">Regresar</button>
+            </div>
+        </form>
+
+    </main>
+</body>
+</html>

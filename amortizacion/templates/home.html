@@ -1,0 +1,55 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_home.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Amortización</h1>
+        <h1>Sistema de Cuota Fija</h1>
+    </header>
+    <main>
+        <form action="{% url 'resultados_price'%}" method="post">
+            {% csrf_token %}
+            <label for="">Deuda: <input type="text" name="input_deuda" class="deuda" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required></label>
+            <label for="">Años: <input type="text" name="input_años" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required></label>
+            <label for="">Tasa de interes: <input type="text" name="input_tasa_interes" class="interes" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required> <label for="">%</label></label>
+            <label for="">periodo:
+                <select name="opcion" id="">
+                    <option value="anual">Anual</option>
+                    <option value="trimestral">Trimestral</option>
+                    <option value="bimestral">Bimestral</option>
+                    <option value="semestral">Semestral</option>
+                    <option value="mes">Mensual</option>
+                </select>
+            </label>
+
+            <label for="">Caso 3
+                <input type="radio" name="casos" class="casos" value="caso3">
+                <select name="opcion_a_pagar_caso3" id="">
+                    <option value="anual">Anual</option>
+                    <option value="trimestral">Trimestral</option>
+                    <option value="bimestral">Bimestral</option>
+                    <option value="semestral">Semestral</option>
+                    <option value="mes">Mensual</option>
+                </select>
+            </label>
+           
+
+            <div class="contenedor_boton">
+                <button type="submit">Ver solución</button>
+            </div>
+
+        </form>
+        <form action="{% url 'seleccion_problema' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Regresar</button>
+        </form>
+        
+    </main>
+</body>
+</html>

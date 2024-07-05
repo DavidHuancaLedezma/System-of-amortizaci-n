@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_seleccion_problema.css' %}">
+    <title>Document</title>
+</head>
+<body>
+        <header>
+            <h1>Proyecto Sistemas Economicos 1/2024</h1>
+            <h1>Amortización</h1>
+        </header>
+        <main>
+            <form action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+                <button type="submit">Sistema de Cuota Fija</button>
+            </form>
+            <form action="{% url 'sac' %}" method="post">
+            {% csrf_token %}
+                <button type="submit" >Sistema de Amortización Constante</button>
+            </form>
+
+            <form action="{% url 'manual_de_uso' %}" method="post">
+                {% csrf_token %}
+                    <button type="submit" >Manual de uso</button>
+                </form>
+            
+        </main>
+    
+</body>
+</html>

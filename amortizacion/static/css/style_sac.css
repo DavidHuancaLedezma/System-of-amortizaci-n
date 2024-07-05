@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('/static/img/fondo4.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-weight: 900;
+    overflow: hidden; 
+}
+main{
+    justify-content: center;
+    height: 100%;
+}
+.interes {
+    width: 50px;
+}
+h1 {
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+label {
+    margin: 10px;
+}
+input {
+    width: 200px;
+    text-align: right;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 10px;
+    width: 150px;
+    height: 60px;
+    border-radius: 15px; 
+}
+
+.contenedor_botones {
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+.tasa {
+   display: block;
+margin-left: 50px;
+}
+select.opcion_capitalizar_sac{
+    margin: 15px;
+    margin-left: 100px; 
+}
+@media (max-width: 768px) {
+    body {
+        background-size: cover;
+    }
+}

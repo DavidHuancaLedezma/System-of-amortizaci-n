@@ -1,0 +1,42 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_resultados.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Resultados</h1>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <th>N</th>
+                <th>SALDO</th>
+                <th>AMORTIZACIÓN</th>
+                <th>INTERES</th>
+                <th>CUOTA</th>
+            </tr>
+            {% for fila in datos %}
+            <tr>
+                <td>{{fila.0}}</td>
+                <td>{{fila.1}}</td>
+                <td>{{fila.2}}</td>
+                <td>{{fila.3}}</td>
+                <td>{{fila.4}}</td>
+            </tr>
+            {% endfor%}
+        </table>
+    </main>
+    <footer>
+        <p>Sumatoria del interes total: {{interes_total}}</p>
+        <form action="{% url 'seleccion_problema' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Regresar</button>
+        </form>
+    </footer>
+</body>
+</html>

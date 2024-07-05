@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('/static/img/fondo4.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-weight: 900;
+    overflow: hidden; 
+}
+header{
+    display: inline;
+    background-color: darkgoldenrod;
+    border-radius: 10px;
+}
+h1 {
+    text-align: center;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+
+}
+
+input {
+    margin: 10px;
+    width: 171px;
+    text-align: right;
+}
+.deuda {
+    width: 162px;
+}
+select {
+    width: 175px;
+    height: 25px;
+}
+button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 10px;
+    width: 150px;
+    height: 60px;
+    border-radius: 15px; 
+}
+.interes {
+    width: 110px;
+}
+.contenedor_boton {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.casos {
+    width: 30px;
+}

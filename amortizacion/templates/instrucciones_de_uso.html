@@ -1,0 +1,58 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrucciones</title>
+</head>
+<body>
+    <main>
+        <h1>Instrucciones de Uso</h1>
+        <h3>Paso 1: Seleccione su tipo de sistema que va a utilizar</h3>
+        <img src="{% static '/img/img1.png' %}" alt="" width="300px">
+        <h3>Paso 2: Ingrese su Deuda</h3>
+        <img src="{% static '/img/img2.png' %}" alt="" width="300px">
+        <h3>Paso 3: Ingrese la cantidad de Años</h3>
+        <img src="{% static '/img/img3.png' %}" alt="" width="300px">
+        <h3>Paso 4: Ingrese la Tasa de interes</h3>
+        <img src="{% static '/img/img4.png' %}" alt="" width="300px">
+        <h3>Paso 5: Seleccione el Periodo</h3>
+        <img src="{% static '/img/img7.png' %}" alt="" width="300px">
+        <h3>Paso 6(OPCIONAL): Marque la casilla "Caso 3" y seleccione la opcion que requiera </h3>
+        <img src="{% static '/img/img5.png' %}" alt="" width="300px">
+        <h3>Paso 7: Presione el boton "VER SOLUCION" para visualizar su respuesta</h3>
+        <img src="{% static '/img/img6.png' %}" alt="" width="300px">
+
+        <form action="{% url 'seleccion_problema' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Regresar</button>
+        </form>
+        
+        <style>
+            form {
+                display: flex;
+                justify-content: center;
+            }
+            button {
+                margin: 20px;
+                width: 200px;
+                height: 70px;
+                background-color: white;
+                color: black;
+                border: 2px solid black;
+                padding: 10px 20px;
+                font-weight: bold;
+                font-family: Arial, sans-serif;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+                box-shadow: 0px 3px 5px rgba(15 15 15 .5);
+                border-radius: 15px; 
+            }
+        </style>
+    </main>
+    
+     
+</body>
+</html>
